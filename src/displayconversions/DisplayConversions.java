@@ -72,61 +72,22 @@ public class DisplayConversions {
         Scanner input = new Scanner(System.in);
         double measurement = -1;
         
-        System.out.print("Enter your weight to convert in kilos :");
+        System.out.print("Enter your weight to convert in kilos: ");
         
         while (measurement < 0) {
-            
-            try {                
-                measurement = Double.parseDouble(input.nextLine());
-                if (measurement > 0) {
-                    System.out.println("Your weight of " + measurement + 
-                            " kilos converts to "
-                            + MeasurementConversions.KilosToLbs(measurement)
-                            + " pounds.");
-                    System.out.println();
-                } else {
-                    
-                    System.out.print("Enter a positive number: ");
-                    System.out.println();
-                }
-            } catch (NumberFormatException e) {
-                
-                System.out.print("Please enter a positive numeric value: ");
+            String myInput = input.nextLine();
+            if (TestInput(myInput) == true ){
+                measurement = Double.parseDouble(myInput);                
+                System.out.println("Your weight of " + measurement + 
+                        " kilos converts to "
+                        + MeasurementConversions.KilosToLbs(measurement)
+                        + " pounds.");
                 System.out.println();
-            }           
+            } 
         }    
     }
     
     public static void InputLbs(){
-        Scanner input = new Scanner(System.in);
-        double measurement = -1;
-        
-        System.out.print("Enter your weight to convert in pounds : ");
-        
-        while (measurement < 0) {
-            
-            try {                
-                measurement = Double.parseDouble(input.nextLine());
-                if (measurement > 0) {
-                    System.out.println("Your weight of " + measurement 
-                            + " pounds converts to "
-                            + MeasurementConversions.LbsToKilos(measurement)
-                            + " kilos.");
-                    System.out.println();
-                } else {
-                    
-                    System.out.print("Enter a positive number: ");
-                    System.out.println();                    
-                }
-            } catch (NumberFormatException e) {
-                
-                System.out.print("Please enter a positive numeric value: ");
-                System.out.println();
-            }           
-        }        
-    }
-    
-    public static void InputLbsTest(){
         Scanner input = new Scanner(System.in);
         double measurement = -1;
         
@@ -160,8 +121,35 @@ public class DisplayConversions {
         else{
             System.out.print("Enter a positive number: ");                                
             return false;
-        } 
-                
-                
+        }             
     }
+    
+    public static void InputLbs1(){
+        Scanner input = new Scanner(System.in);
+        double measurement = -1;
+        
+        System.out.print("Enter your weight to convert in pounds : ");
+        
+        while (measurement < 0) {
+            
+            try {                
+                measurement = Double.parseDouble(input.nextLine());
+                if (measurement > 0) {
+                    System.out.println("Your weight of " + measurement 
+                            + " pounds converts to "
+                            + MeasurementConversions.LbsToKilos(measurement)
+                            + " kilos.");
+                    System.out.println();
+                } else {
+                    
+                    System.out.print("Enter a positive number: ");
+                    System.out.println();                    
+                }
+            } catch (NumberFormatException e) {
+                
+                System.out.print("Please enter a positive numeric value: ");
+                System.out.println();
+            }           
+        }        
+    }    
 }

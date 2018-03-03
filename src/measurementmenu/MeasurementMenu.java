@@ -12,7 +12,7 @@ public class MeasurementMenu {
         DisplayConversions.InputInches();
         //DisplayConversions.InputCentimeters();
         //DisplayConversions.InputKilos();
-        DisplayConversions.InputLbsTest();   
+        DisplayConversions.InputLbs();   
         //TestInput();
     }
     
@@ -21,19 +21,6 @@ public class MeasurementMenu {
         System.out.print("Enter input to test: ");        
         String strToTest = input.nextLine();
         DisplayConversions.TestInput(strToTest);
-        //if (DisplayConversions.TestInput(strToTest)== true){            
-        //    System.out.println(strToTest + " is valid data!");
-        //}
-        //else{       
-        //    System.out.println(strToTest + " is invalid data!");
-        //}
-        
-        
-        
-        
-        
-        
-    
     }
     
 }
