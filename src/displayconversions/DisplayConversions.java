@@ -1,9 +1,8 @@
 package displayconversions;
 
 import java.util.Scanner;
-/**
- *@author Robert Holahan
- * 
+/*
+ *Robert Holahan
  */
 public class DisplayConversions {
     
@@ -21,8 +20,8 @@ public class DisplayConversions {
             try {                
                 measurement = Double.parseDouble(input.nextLine());
                 if (measurement > 0) {
-                    System.out.println("Your measurement of inches "
-                            + measurement + " converts to "
+                    System.out.println("Your measurement of " + measurement 
+                            + " inches converts to "
                             + MeasurementConversions.InchesToCentimeters(measurement)
                             + " centimeters.");
                     System.out.println();
@@ -50,8 +49,8 @@ public class DisplayConversions {
             try {                
                 measurement = Double.parseDouble(input.nextLine());
                 if (measurement > 0) {
-                    System.out.println("Your measurement of centimeters "
-                            + measurement + " converts to "
+                    System.out.println("Your measurement of " + measurement 
+                            +" centimeters converts to "
                             + MeasurementConversions.CentimetersToInches(measurement)
                             + " inches.");
                     System.out.println();

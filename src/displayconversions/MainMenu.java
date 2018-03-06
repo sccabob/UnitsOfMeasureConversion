@@ -1,5 +1,5 @@
 
-package MeasurementMenu;
+package displayconversions;
 
 import java.util.Scanner;
 import displayconversions.DisplayConversions;
