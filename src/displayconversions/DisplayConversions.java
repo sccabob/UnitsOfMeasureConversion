@@ -9,104 +9,91 @@ public class DisplayConversions {
     public void DisplayConversions() {        
     }
     
-    public static void InputInches() {
-        Scanner input = new Scanner(System.in);
-        double measurement = -1;
+    public static void convertInchesToCentimeters(){
+        //Gather and validate user input
+        double measurement =
+        getUserInput("Pounds", "Enter your measurement in Inches : ");
         
-        System.out.print("Enter your measurement in Inches :");
-        
-        while (measurement < 0) {
-            
-            try {                
-                measurement = Double.parseDouble(input.nextLine());
-                if (measurement > 0) {
-                    System.out.println("Your measurement of " + measurement 
-                            + " inches converts to "
-                            + MeasurementConversions.InchesToCentimeters(measurement)
-                            + " centimeters.");
-                    System.out.println();
-                } else {
-                    
-                    System.out.print("Enter a positive number: ");
-                    System.out.println();
-                }
-            } catch (NumberFormatException e) {
-                
-                System.out.print("Please enter a positive numeric value: ");
-                System.out.println();
-            }           
-        }
+        //Output to user
+        System.out.println("Your measurement of " + measurement 
+                + " inches converts to "
+                + MeasurementConversions.inchesToCentimeters(measurement)
+                + " centimeters.");
+        System.out.println();        
     }
+    
+    public static void convertCentimetersToInches(){
+        //Gather and validate user input
+        double measurement =
+        getUserInput("Pounds", "Enter your measurement in Centimeters : ");
 
-    public static void InputCentimeters(){
-        Scanner input = new Scanner(System.in);
-        double measurement = -1;
+        //Output to user
+        System.out.println("Your measurement of " + measurement 
+                +" centimeters converts to "
+                + MeasurementConversions.centimetersToInches(measurement)
+                + " inches.");
+        System.out.println();        
+    }
+   
+    public static void convertKilosToPounds(){
+        //Gather and validate user input
+        double measurement =
+        getUserInput("Pounds", "Enter your weight to convert in kilos : ");
         
-        System.out.print("Enter your measurement in Centimeters :");
+        //Output to user        
+        System.out.println("Your weight of " + measurement + 
+            " kilos converts to "
+            + MeasurementConversions.kilosToLbs(measurement)
+            + " pounds.");
+        System.out.println();   
+    }
+       
+    public static void convertPoundsToKilos(){
+        //Gather and validate user input
+        double measurement =
+        getUserInput("Pounds", "Enter your weight to convert in pounds : ");
         
-        while (measurement < 0) {
+        //Output to user
+        System.out.println("Your weight of " + measurement 
+                + " pounds converts to "
+                + MeasurementConversions.lbsToKilos(measurement)
+                + " kilos.");
+        System.out.println();
+    }
+    
+    public static void convertCiTocc(){
+        //Gather and validate user input
+        double measurement =
+        getUserInput("Pounds", "Enter your volume to convert in cubic inches : ");
+
+        //Output to user
+        System.out.println("Your volume of " + measurement 
+                + " cubic inches converts to "
+                + MeasurementConversions.cubicInchesToCc(measurement)
+                + " cubic centimeters.");
+        System.out.println();
+        
+    }
+       
+    private static double getUserInput(String UnitOfMeasure, String Prompt) {
+        
+        Scanner input = new Scanner(System.in);            
+        boolean validInput = false;
+        String userInput = "";
+        
+            while (validInput == !true) {           
+            System.out.print(Prompt);
+            userInput = input.nextLine();
+            validInput = testInput(userInput);                   
+            }
             
-            try {                
-                measurement = Double.parseDouble(input.nextLine());
-                if (measurement > 0) {
-                    System.out.println("Your measurement of " + measurement 
-                            +" centimeters converts to "
-                            + MeasurementConversions.CentimetersToInches(measurement)
-                            + " inches.");
-                    System.out.println();
-                } else {
-                    
-                    System.out.print("Enter a positive number: ");
-                    System.out.println();
-                }
-            } catch (NumberFormatException e) {
-                
-                System.out.print("Please enter a positive numeric value: ");
-                System.out.println();
-            }           
-        }
-    } 
-    
-    public static void InputKilos(){
-        Scanner input = new Scanner(System.in);
-        double measurement = -1;
-        
-        System.out.print("Enter your weight to convert in kilos: ");
-        
-        while (measurement < 0) {
-            String myInput = input.nextLine();
-            if (TestInput(myInput) == true ){
-                measurement = Double.parseDouble(myInput);                
-                System.out.println("Your weight of " + measurement + 
-                        " kilos converts to "
-                        + MeasurementConversions.KilosToLbs(measurement)
-                        + " pounds.");
-                System.out.println();
-            } 
-        }    
+           return Double.parseDouble(userInput);
     }
     
-    public static void InputLbs(){
-        Scanner input = new Scanner(System.in);
-        double measurement = -1;
+    private static boolean testInput(String Input){
         
-        System.out.print("Enter your weight to convert in pounds : ");
-        
-        while (measurement < 0){
-            String myInput = input.nextLine();
-            if (TestInput(myInput) == true ){
-                measurement = Double.parseDouble(myInput);
-                System.out.println("Your weight of " + measurement 
-                        + " pounds converts to "
-                        + MeasurementConversions.LbsToKilos(measurement)
-                        + " kilos.");
-                System.out.println();
-            }                           
-        }        
-    }
-        
-    public static boolean TestInput(String Input){
             double testValue;
+            
         try {
             testValue = Double.parseDouble(Input);                             
         }
@@ -122,33 +109,4 @@ public class DisplayConversions {
             return false;
         }             
     }
-    
-    public static void InputLbs1(){
-        Scanner input = new Scanner(System.in);
-        double measurement = -1;
-        
-        System.out.print("Enter your weight to convert in pounds : ");
-        
-        while (measurement < 0) {
-            
-            try {                
-                measurement = Double.parseDouble(input.nextLine());
-                if (measurement > 0) {
-                    System.out.println("Your weight of " + measurement 
-                            + " pounds converts to "
-                            + MeasurementConversions.LbsToKilos(measurement)
-                            + " kilos.");
-                    System.out.println();
-                } else {
-                    
-                    System.out.print("Enter a positive number: ");
-                    System.out.println();                    
-                }
-            } catch (NumberFormatException e) {
-                
-                System.out.print("Please enter a positive numeric value: ");
-                System.out.println();
-            }           
-        }        
-    }    
 }

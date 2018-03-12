@@ -2,10 +2,8 @@
 package displayconversions;
 
 import java.util.Scanner;
-import displayconversions.DisplayConversions;
 
 /**
- *
  * @author Robert Holahan
  */
 public class MainMenu {
@@ -33,10 +31,12 @@ public class MainMenu {
         System.out.println("2. Convert Centimeters to Inches");
         System.out.println("3. Convert Pounds to Kilos");
         System.out.println("4. Convert Kilos to Pounds");
+        System.out.println("5. Convert Cubic Inches to Cubic Centimeters");        
         System.out.println("Exit 0");
     }
 
     private void printHeader() {
+        
         System.out.println("+---------------------------------------------------------+");
         System.out.println("|                        Welcome to                       |");
         System.out.println("|                     Conversion Master                   |");
@@ -51,21 +51,26 @@ public class MainMenu {
                 break;
             case 1:
                 System.out.println();
-                DisplayConversions.InputInches();
+                DisplayConversions.convertInchesToCentimeters();
                 break;
             case 2:
                 System.out.println();
-                DisplayConversions.InputCentimeters();
+                DisplayConversions.convertCentimetersToInches();
                 break;
             case 3:
                 System.out.println();
-                DisplayConversions.InputLbs();
+                DisplayConversions.convertPoundsToKilos();
                 break;
             case 4:
                 System.out.println();
-                DisplayConversions.InputKilos();
+                DisplayConversions.convertKilosToPounds();
+                break;               
+            case 5:
+                System.out.println();
+                DisplayConversions.convertCiTocc();
                 break;
-            default:
+                
+            default:                
         }
     }
 
@@ -73,7 +78,7 @@ public class MainMenu {
         Scanner input = new Scanner(System.in);
 
         int choice = -1;
-        while (choice < 0 || choice > 4) {
+        while (choice < 0 || choice > 5) {
 
             try {
                 System.out.print("\nEnter your choice: ");

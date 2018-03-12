@@ -1,5 +1,6 @@
 package measurementmenu;
 import displayconversions.DisplayConversions;
+import displayconversions.MeasurementConversions;
 import java.util.Scanner;
 /**
  *@author Robert Holahan
@@ -9,18 +10,12 @@ public class MeasurementMenu {
 
     
     public static void main(String[] args) {
-        DisplayConversions.InputInches();
-        //DisplayConversions.InputCentimeters();
-        //DisplayConversions.InputKilos();
-        DisplayConversions.InputLbs();   
-        //TestInput();
+        
+        //System.out.println(MeasurementConversions.CiToLiters(305));
+        //System.out.println(MeasurementConversions.CcToCi(5000));
     }
     
     public static void TestInput(){
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter input to test: ");        
-        String strToTest = input.nextLine();
-        DisplayConversions.TestInput(strToTest);
     }
     
 }
